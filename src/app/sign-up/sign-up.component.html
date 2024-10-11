@@ -1,0 +1,141 @@
+
+
+<section>
+    <div class="signUp-page-width">
+        <div class="signUp-page-section">
+            <!-- Carousel End -->
+            <div class="signUp-container">
+                <div class="tab">
+                    <a href="#" (click)="showTab('employeur', $event)">Employeur</a>
+                    <a href="#" (click)="showTab('stagiaire', $event)">Stagiaire</a>
+                </div>
+                <div class="content" id="employeurTab">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signUpNom">Nom de l'entreprise :</label>
+                                    <input type="text" [(ngModel)]="employee.nom_entreprise" name="nom_entreprise" id="signUpNom" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signUpNomComplet">Nom et prenom :</label>
+                                    <input type="text" id="signUpNomComplet" [(ngModel)]="employee.nom_prenom" name="nom_prenom" required>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="row">
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signUpEmail">E-mail :</label>
+                                    <input type="email" id="signUpEmail" [(ngModel)]="employee.email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signUpTele">Téléphone :</label>
+                                    <input type="text" id="signUpTele" [(ngModel)]="employee.telephone" name="telephone"  required>
+                                </div>
+                            </div>
+                            
+                        </div>
+                
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signUpVille">Ville :</label>
+                                    <input type="text" id="signUpVille" [(ngModel)]="employee.ville" name="ville" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signUpAdresse">Adresse :</label>
+                                    <input type="text" id="signUpAdresse" [(ngModel)]="employee.adress" name="adress" required>
+                                </div>
+                            </div>
+                            
+                        </div>
+                
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signUpPassword">Mot de passe :</label>
+                                    <input type="password" id="signUpPassword" [(ngModel)]="employee.mot_pass" name="mot_pass" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signUpConfirmPassword">Confirmer le mot de passe :</label>
+                                    <input type="password" id="signUpConfirmPassword" [(ngModel)]="employee.Confmot_pass" name="Confmot_pass" required>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="row ">
+                            <button type="submit" (click)="signup()" class="mx-auto">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="content" id="stagiaireTab" style="display: none;">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupNom">Nom :</label>
+                                    <input type="text" id="signupNom" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPrenom">Prénom :</label>
+                                    <input type="text" id="signupPrenom" required>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupEmail">Email :</label>
+                                    <input type="email" id="signupEmail" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupTele">Téléphone :</label>
+                                    <input type="text" id="signupTele" required>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPassword">Mot de passe :</label>
+                                    <input type="password" id="signupPassword" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Confirmer le mot de passe :</label>
+                                    <input type="password" id="signupConfirmPassword" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <button type="submit" (click)="signupStagiaire()" class="mx-auto">Sign Up</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+           
+    </div>
+</section>
+

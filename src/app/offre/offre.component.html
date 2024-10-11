@@ -1,0 +1,332 @@
+
+
+<section>
+    <div class="signUp-page-width">
+        <div class="signUp-page-section">
+            <div class="signUp-container">
+                <div class="tab">
+                    <a href="#" (click)="showTab('employeur', $event)">Offre d'mploie</a>
+                    <a href="#" (click)="showTab('stagiaire', $event)">Offre de stage</a>
+                </div>
+                
+                <div class="content" id="employeurTab">
+                    <form #form="ngForm">
+                        <div class="infoEntreprise"  id="infoEntreprise" style="display: block;">
+                        <h1 class="text-center">Informations d'entreprise</h1>
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupNom">Le nom de votre entreprise :</label>
+                                    <input type="text" id="nom" [(ngModel)]="emploiOffre.nomEntreprise" name="nomEntreprise" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPrenom">Votre nom et prénom:</label>
+                                    <input type="text" id="fullName" [(ngModel)]="emploiOffre.fullName" name="fullName" required>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupEmail">Votre numéro de téléphone  :</label>
+                                    <input type="text" [(ngModel)]="emploiOffre.teleEntreprise" id="teleEntreprise" name="teleEntreprise" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupTele">Email :</label>
+                                    <input type="email" id="emailEntreprise" [(ngModel)]="emploiOffre.emailEntreprise" id="teleEntreprise"  name="emailEntreprise" required>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPassword">Ville :</label>
+                                    <input type="text" id="villeEntreprise" [(ngModel)]="emploiOffre.villeEntreprise" name="villeEntreprise" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Adresse :</label>
+                                    <input type="text" id="adresseEntreprise" [(ngModel)]="emploiOffre.adresseEntreprise" name="adresseEntreprise" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        
+                            <div class="col-md-6 media-body ml-4">
+                                <label for="imageInput">Nombre d'employés:</label>
+                                <input type="text" id="nbrEmployes"  [(ngModel)]="emploiOffre.nbrEmployes" name="nbrEmployes">
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <button type="submit"  (click)="changeTab($event)" class="mx-auto">Continuer</button>
+                        </div>
+                    </div>
+                        <!-- end of infoTab !-->
+                        <!--start detailsTab!-->
+                       
+                    <div class="details"  id="details" style="display: none;">
+                        <div class="row">
+                            <h1 class="text-centre">Détails de l'offre d'emploi</h1>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPassword">Intitulé du poste :</label>
+                                    <input type="text" id="poste" [(ngModel)]="emploiOffre.poste" name="poste" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Nombre de postes</label>
+                                    <input type="text" class="nbrposte" [(ngModel)]="emploiOffre.nbrPoste" name="nbrposte" required rows="3">
+    
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPassword">Type de poste :</label>
+                                    <input type="text" class="form-control" [(ngModel)]="emploiOffre.typePoste" name="typePoste" required rows="2">
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Horaires :</label>
+                                    <input type="text" class="form-control" [(ngModel)]="emploiOffre.horaire" name="horaire" required rows="3">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                           
+                           
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Salaire :</label>
+                                    <input type="text" id="salaire" [(ngModel)]="emploiOffre.salaire" name="salaire" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Primes et gratifications :</label>
+                                    <input type="text" id="primes" [(ngModel)]="emploiOffre.primes" name="primes" required>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row ">
+                            <button type="submit"  (click)="changeTab($event)" class="mx-auto">Continuer</button>
+                        </div>
+                    </div>
+                    <!-- end of tab2 !-->
+                        <!--start tab 3!-->
+                    <div class="parametres"  id="parametres" style="display: none;">
+                        <div class="row">
+                            <h1 class="text-centre">Paramètres</h1>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPassword">Autoriser les candidat(e)s à me contacter (téléphone):</label>
+                                    <input type="string" id="autorisation" [(ngModel)]="emploiOffre.autorisation"  name="autorisation" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Exigences linguistiques flexibles</label>
+                                    <input type="text" class="form-control" [(ngModel)]="emploiOffre.langues" name="langues" required rows="3">
+    
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPassword">Délai de recrutement :</label>
+                                    <input type="date" class="form-control" [(ngModel)]="emploiOffre.delais" name="delais" required >
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Date de début prévue :</label>
+                                    <input type="date" class="form-control" [(ngModel)]="emploiOffre.datePrevu" name="datePrevu" required >
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                           
+                           
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Type de Contrat :</label>
+                                    <input type="text" id="typeContrat" [(ngModel)]="emploiOffre.typeContrat" name="typeContrat" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Description de poste :</label>
+                                    <textarea  id="signupConfirmPassword" [(ngModel)]="emploiOffre.descriptionPoste" name="descriptionPoste" rows="2" required></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <label for="categories">Sélectionnez un secteur:</label>
+                            <select id="categories" [(ngModel)] = "emploiOffre.secteur" name="secteurE" (change)="onSelect($event)" class="form-select"  aria-label="Default select example" >
+                                <option value="1">Digital et Intelligence Artificielle</option>
+                                <option value="2">BTP</option>
+                                <option value="3">Artisanat</option>
+                                <option value="4">Industrie</option>
+                                <option value="5">Pêche</option>
+                                <option value="6">Agriculture</option>
+                                <option value="7">Gestion et Commerce</option>
+                                <option value="8">Tourisme - Hôtellerie - Restauration</option>
+                                <option value="9">Agro-industrie</option>
+                                <option value="10">Arts et Industrie Graphique</option>
+                                <option value="11">Santé</option>
+                            </select>
+                        </div>
+                        <div class="row ">
+                            <button type="submit" [routerLink]="['/job-list-by-category', selectedSecteur]" (click)="OffreEmploi()" class="mx-auto">Enregistrer</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                <div class="content" id="stagiaireTab" style="display: none;">
+                    <form #form="ngForm">
+                        <div class="tab1"  id="tab1">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupNom">nom de société :</label>
+                                    <input type="text" id="signupNom" [(ngModel)]="stageOffre.nomSociete" name="nomSociete" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPrenom">description :</label>
+                                    <input type="text" id="signupPrenom" [(ngModel)]="stageOffre.description" name="description" required>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupEmail">date de début :</label>
+                                    <input type="date" id="signupEmail" [(ngModel)]="stageOffre.dateDebut" name="dateDebut" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupTele">date fin :</label>
+                                    <input type="date" id="signupTele" [(ngModel)]="stageOffre.dateFin" name="dateFin" required>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPassword">Durée de stage :</label>
+                                    <input type="string" id="signupPassword" [(ngModel)]="stageOffre.dureeStage" name="dureeStage" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Lieu de stage :</label>
+                                    <input type="text" id="signupConfirmPassword" [(ngModel)]="stageOffre.lieuStage" name="lieuStage" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 media-body ml-4">
+                                <label for="imageInput">Logo:</label>
+                                <input type="file" id="imageInput" (change)="onFileSelected($event)" [(ngModel)]="stageOffre.image" name="image">
+                            </div>
+                            <div class="col-md-6 media-body ml-4">
+                                <label for="imageInput">Adress:</label>
+                                <input type="text" id="imageInput"  [(ngModel)]="stageOffre.adresse" name="adresse">
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <button type="submit"  (click)="changeTab($event)" class="mx-auto">Continuer</button>
+                        </div>
+                    </div>
+                        <!-- end of tab1 !-->
+                        <!--start tab 2!-->
+                       
+                    <div class="tab2"  id="tab2" style="display: none;">
+                        <div class="row">
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPassword">Type de stage :</label>
+                                    <input type="string" id="signupPassword" [(ngModel)]="stageOffre.typeStage" name="typeStage" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Info Supplementaires</label>
+                                    <textarea class="form-control" [(ngModel)]="stageOffre.supplementaires" name="supplementaires" required rows="3"></textarea>
+    
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupPassword">Responsabilités du stagiaire :</label>
+                                    <textarea class="form-control" [(ngModel)]="stageOffre.responsabilites" name="responsabilites" required rows="2"></textarea>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Qualifications requises :</label>
+                                    <textarea class="form-control" [(ngModel)]="stageOffre.qualifications" name="qualifications" required rows="3"></textarea>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                           
+                           
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="signupConfirmPassword">Secteur d'activité :</label>
+                                    <select id="categories"  class="form-select" [(ngModel)] = "stageOffre.secteur" name="secteur" (change)="onSelect($event)"  aria-label="Default select example" >
+                                        <option value="1">Digital et Intelligence Artificielle</option>
+                                        <option value="2">BTP</option>
+                                        <option value="3">Artisanat</option>
+                                        <option value="4">Industrie</option>
+                                        <option value="5">Pêche</option>
+                                        <option value="6">Agriculture</option>
+                                        <option value="7">Gestion et Commerce</option>
+                                        <option value="8">Tourisme - Hôtellerie - Restauration</option>
+                                        <option value="9">Agro-industrie</option>
+                                        <option value="10">Arts et Industrie Graphique</option>
+                                        <option value="11">Santé</option>
+                                    </select>                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row ">
+                            <button type="submit" [routerLink]="['/job-list-by-category', selectedSecteur]"  (click)="Offre()" class="mx-auto">Enregistrer</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+           
+    </div>
+</section>
+
+
